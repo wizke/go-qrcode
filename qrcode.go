@@ -558,9 +558,9 @@ func (q *QRCode) ToString(inverseColor bool) string {
 	for y := range bits {
 		for x := range bits[y] {
 			if bits[y][x] != inverseColor {
-				buf.WriteString("  ")
+				buf.WriteString("\033[30m██\033[0m")
 			} else {
-				buf.WriteString("██")
+				buf.WriteString("\033[37m██\033[0m")
 			}
 		}
 		buf.WriteString("\n")
